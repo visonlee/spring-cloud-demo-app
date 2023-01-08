@@ -1,0 +1,15 @@
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 10000
+        read-timeout: 10000

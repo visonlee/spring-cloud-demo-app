@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: provider-service
+          uri: lb://provider-service
+          predicates:
+            - Path=/api/provider/**
+          filters:
+            - RewritePath=/api/provider/(?<segment>/?.*), /${segment}
